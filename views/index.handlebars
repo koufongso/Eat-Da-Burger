@@ -13,14 +13,14 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="card col-6">
+    <div class="row justify-content-between">
+        <div class="card col-5">
             <div class="card-body">
                 <h5 class="card-header">Waiting Area</h5>
                 <ul class="list-group list-group-flush" id="waiting_list">
                     {{#each burgers}}
                     {{#unless devoured}}
-                    <li class="list-group-item" data-id={{id}} data-devoured={{devoured}}>{{burger_name}}
+                    <li class="list-group-item" data-id={{id}} data-name="{{burger_name}}">{{burger_name}}
                         <button type="button" class="btn btn-success btn-sm float-sm-right btn-devour">Devour!</button>
                     {{/unless}}
                     {{/each}}
@@ -28,13 +28,13 @@
             </div>
         </div>
 
-        <div class="card col-6">
+        <div class="card col-5">
             <div class="card-body">
                 <h5 class="card-header">Devoured!</h5>
-                <ul class="list-group list-group-flush" id="devoured-list">
+                <ul class="list-group list-group-flush" id="devoured_list">
                     {{#each burgers}}
                     {{#if devoured}}
-                    <li class="list-group-item" data-id={{id}} data-devoured={{devoured}}>{{burger_name}}</li>
+                    <li class="list-group-item" data-id={{id}} data-name="{{burger_name}}">{{burger_name}}</li>
                     {{/if}}
                     {{/each}}
                 </ul>
