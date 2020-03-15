@@ -13,7 +13,7 @@ router.get("/", function (req, res) {
 
 // insert a burger into the database
 router.post("/api/burgers", function (req, res) {
-    console.log(req);
+    // console.log(req);
     burger.create(req.body, function (result) {
         console.log("added!");
         res.json(result);
