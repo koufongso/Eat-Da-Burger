@@ -13,6 +13,7 @@ $(document).ready(function () {
                     alert("Opps, something is wrong. Please try agian.");
                 }
             });
+        $("#burger_name").val("");
     });
 
 
@@ -24,10 +25,10 @@ $(document).ready(function () {
         $.ajax(`/api/burgers/${id}`, { type: "PUT" })
             .then(function (res) {
                 // console.log(data);
-                if(res.affectedRows==1){
+                if (res.affectedRows == 1) {
                     $(item).remove();
                     $("#devoured_list").append(`<li class="list-group-item" data-id=${id} data-name="${name}">${name}</li>`);
-                }else {
+                } else {
                     alert("Opps, something is wrong. Please try agian.");
                 }
             });
