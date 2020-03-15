@@ -1,8 +1,8 @@
-INSERT INTO burgers(burger_name,dervoured)
-VALUES("Hamburger",false);
+INSERT INTO burgers(burger_name)
+VALUES("Hamburger");
 
-INSERT INTO burgers(burger_name,dervoured)
-VALUES("Bacon Cheeseburger ",false);
+INSERT INTO burgers(burger_name)
+VALUES("Bacon Cheeseburger ");
 
-INSERT INTO burgers(burger_name,dervoured)
-VALUES("Angus Burger",false);
+INSERT INTO burgers(burger_name)
+VALUES("Angus Burger");
