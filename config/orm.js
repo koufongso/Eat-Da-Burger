@@ -9,8 +9,8 @@ var orm = {
      * @param {function} cb callback function that handle the query result
      */
     selectAll: function (table, cb) {
-        var query = "SELECT * FROM ?";
-        connection.query(query, [table], function (err, res) {
+        var query = "SELECT * FROM " + table;
+        connection.query(query, function (err, res) {
             if (err) throw err;
             cb(res)
         });
@@ -23,8 +23,8 @@ var orm = {
      * @param {function} cb callback function that handle the query result
      */
     insertOne: function (table, data, cb) {
-        var query = "INSERT INTO ? SET ?";
-        connection.query(query, [table, data], function (err, res) {
+        var query = "INSERT INTO " + table + " SET ?";
+        connection.query(query, [data], function (err, res) {
             if (err) throw err;
             cb(res)
         });
@@ -38,8 +38,8 @@ var orm = {
      * @param {funciton} cb callback function that handle the query result
      */
     updateOne: function (table, newData, condition, cb) {
-        var query = "UPDATE ? SET ? WHERE ?";
-        connection.query(query, [table, newData, condition], function (err, res) {
+        var query = "UPDATE "+table+" SET ? WHERE ?";
+        connection.query(query, [newData, condition], function (err, res) {
             if (err) throw err;
             cb(res)
         });
