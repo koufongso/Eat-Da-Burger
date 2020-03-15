@@ -6,7 +6,8 @@ var router = express.Router();
 // get all burgers in the database
 router.get("/", function (req, res) {
     burger.all(function (result) {
-        res.json(result);
+        // res.json(result);
+        res.render("index",{burgers:result});
     });
 });
 
