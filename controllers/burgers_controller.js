@@ -7,7 +7,7 @@ var router = express.Router();
 router.get("/", function (req, res) {
     burger.all(function (result) {
         // res.json(result);
-        res.render("index",{burgers:result});
+        res.render("index", { burgers: result });
     });
 });
 
@@ -23,7 +23,7 @@ router.post("/api/burgers", function (req, res) {
 
 // insert a burger into the database
 router.put("/api/burgers/:id", function (req, res) {
-    burger.update(req.body, {id:req.params.id}, function (result) {
+    burger.update({ "devoured": true }, { id: req.params.id }, function (result) {
         console.log("updated!");
         res.json(result);
     });
