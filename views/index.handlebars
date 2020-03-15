@@ -1,0 +1,44 @@
+<div class="jumbotron jumbotron-fluid">
+    <h1 class="display-4 text-center">Welcome to Eat Da Burger!</h1>
+    <hr class="my-4">
+    <div class="container">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Put the burger's name here "
+                id="burger_name">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="btn-submit">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="card col-6">
+            <div class="card-body">
+                <h5 class="card-header">Waiting Area</h5>
+                <ul class="list-group list-group-flush" id="waiting_list">
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <li class="list-group-item" data-id={{id}} data-devoured={{devoured}}>{{burger_name}}
+                        <button type="button" class="btn btn-success btn-sm float-sm-right btn-devour">Devour!</button>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <div class="card col-6">
+            <div class="card-body">
+                <h5 class="card-header">Devoured!</h5>
+                <ul class="list-group list-group-flush" id="devoured-list">
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li class="list-group-item" data-id={{id}} data-devoured={{devoured}}>{{burger_name}}</li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
